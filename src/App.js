@@ -27,7 +27,7 @@ function App() {
     const newColumn=`column-${newColumnID}`
     // update
     columnOrder.push(newColumn);
-    columns.newColumn={
+    columns[newColumn]={
       id:newColumn,
       title:listTitle,
       taskIds:[],
@@ -105,7 +105,7 @@ function App() {
       {/* <div className="App"> */}
         { data.columnOrder.map((columnId)=>{
               const column = data.columns[columnId]
-              {console.log(columnId)}
+              // {console.log(columnId)}
               const tasks   =column.taskIds.map(taskId=> data.tasks[taskId])
               return <Column key={column.id} column={column} tasks={tasks}/> 
           })
